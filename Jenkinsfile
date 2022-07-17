@@ -57,11 +57,11 @@ spec:
     stage('Build and push image with Container Builder') {
       steps {
         container('docker') {
-          sh "docker login -u ehgur1104 -p dpszhdk#22"
-	  sh "docker images"
-	  sh "docker ps -a"
-          sh "docker build --tag ${IMAGE_TAG} ."
-          sh "docker push ${IMAGE_TAG}"
+          sh ("docker login -u ehgur1104 -p dpszhdk#22")
+	  sh ("docker images")
+	  sh ("docker ps -a")
+          sh ("docker build --tag ${IMAGE_TAG} .")
+          sh ("docker push ${IMAGE_TAG}")
         }
       }
     }
