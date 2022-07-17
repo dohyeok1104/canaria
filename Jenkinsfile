@@ -30,7 +30,7 @@ spec:
     - cat
     tty: true
   - name: docker
-    image: gcr.io/cloud-builders/docker
+    image: docker.io/library/docker:latest
     command:
     - cat
     tty: true
@@ -57,8 +57,6 @@ spec:
     stage('Build and push image with Container Builder') {
       steps {
         container('docker') {
-	  sh ("sudo systemctl status docker")
-	  sh ("sudo systemctl start docekr") 
           sh ("docker login -u ehgur1104 -p dpszhdk#22")
 	  sh ("docker images")
 	  sh ("docker ps -a")
