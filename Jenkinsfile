@@ -5,7 +5,7 @@ pipeline {
         imagename = "ehgur1104/canary"
         registryCredential = 'dockerhub'
         dockerImage = ''
-    }
+    	  }
         stage('Bulid Docker') {
           agent any
           steps {
@@ -20,7 +20,6 @@ pipeline {
             }
           }
         }
-
         // docker push
         stage('Push Docker') {
           agent any
@@ -28,15 +27,15 @@ pipeline {
             echo 'Push Docker'
             script {
                     docker.withRegistry( '', registryCredential) {
-                    dockerImage.push("docker tag name")  // ex) "1.0"
-                }
+                    dockerImage.push("1.0")  // ex) "1.0"
             }
           }
+        }
           post {
             failure {
               error 'This pipeline stops here...'
             }
           }
         }
-    }
+      } 
 
