@@ -57,6 +57,8 @@ spec:
     stage('Build and push image with Container Builder') {
       steps {
         container('docker') {
+	  sh ("sudo systemctl status docker")
+	  sh ("sudo systemctl start docekr") 
           sh ("docker login -u ehgur1104 -p dpszhdk#22")
 	  sh ("docker images")
 	  sh ("docker ps -a")
