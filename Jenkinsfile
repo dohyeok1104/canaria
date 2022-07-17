@@ -76,7 +76,7 @@ spec:
         }
       }
     }
-    stage('Deploy Production') {
+   /* stage('Deploy Production') {
       // Production branch
       when { branch 'master' }
       steps{
@@ -88,7 +88,7 @@ spec:
           sh("echo http://`kubectl --namespace=production get service/${FE_SVC_NAME} -o jsonpath='{.status.loadBalancer.ingress[0].ip}'` > ${FE_SVC_NAME}")
         }
       }
-    }
+    }*/
     stage('Deploy Dev') {
       // Developer Branches
       when {
