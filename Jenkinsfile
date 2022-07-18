@@ -6,6 +6,7 @@ pipeline {
         registryCredential = 'dockerhub'
         dockerImage = ''
     	  }
+       stages{
         stage('Bulid Docker') {
           agent any
           steps {
@@ -38,4 +39,4 @@ pipeline {
           }
         }
       } 
-
+    }
